@@ -20,28 +20,43 @@ class _HomePageState extends State<HomePage> {
         height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
-            ListTile(
-              title: Text('Welcome', style: TextStyle(color: Provider.of<ThemeProvider>(context, listen: false).textColor),),
-              subtitle: Text(
-                'Xybercommander', 
-                style: TextStyle(
-                  color: Provider.of<ThemeProvider>(context, listen: false).textColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: ListTile(              
+                title: Text('Welcome', style: TextStyle(color: Provider.of<ThemeProvider>(context, listen: false).textColor),),
+                subtitle: Text(
+                  'Xybercommander', 
+                  style: TextStyle(
+                    color: Provider.of<ThemeProvider>(context, listen: false).textColor,
+                    // fontWeight: FontWeight.bold,
+                    fontFamily: 'SFPro-Bold',
+                    fontSize: 18
+                  ),
+                ),
+                leading: CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: NetworkImage("https://avatars.githubusercontent.com/u/38849650?v=4"),
+                  radius: 30,
+                ),
+                trailing: IconButton(
+                  onPressed: () {}, 
+                  icon: Icon(Icons.wb_sunny, color: Colors.yellow)
                 ),
               ),
-              leading: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                backgroundImage: NetworkImage("https://avatars.githubusercontent.com/u/38849650?v=4"),
-                radius: 30,
-              ),
-              trailing: IconButton(
-                onPressed: () {}, 
-                icon: Icon(Icons.wb_sunny, color: Colors.yellow)
-              ),
             ),
-            TextField(
-              
+            Container(              
+              margin: EdgeInsets.symmetric(horizontal: 32),
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Color(0xff36394a)
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none
+                ),
+                style: TextStyle(color: Colors.white),
+              ),
             )
           ],
         )
